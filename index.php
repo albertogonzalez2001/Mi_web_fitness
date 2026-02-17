@@ -6,6 +6,7 @@
     <title>Index PHP</title>
 </head>
 <body>
+    <h1>Eres un tonto</h1>
     
 </body>
 </html>
