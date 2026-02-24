@@ -1,5 +1,5 @@
 <?php
-$title = "Página Principal";
+$title = "Página Principal - FitControl";
 include __DIR__ . '/Includes/header.php'; 
 ?>
 

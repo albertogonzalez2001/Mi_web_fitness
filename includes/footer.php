@@ -11,20 +11,18 @@
                 </ul>
             </div>
             <div class="footer-links">
-
-                <h4>FitControl</h4>
+                <h4>Enlaces</h4>
                 <ul>
-                    <li><a href="">Sobre nosotros</a></li>
+                    <li><a href="/Mi_web_fitness/login.php">Unete a nosotros</a></li>
                     <li><a href="/Mi_web_fitness/rutinas.php">Nuestras rutinas</a></li>
                     <li><a href="/Mi_web_fitness/index.php">Volver al inicio</a></li>
                     <li><a href=""></a></li>
                 </ul>
             </div>
             <div class="footer-links">
-
-                <h4>FitControl</h4>
+                <h4>Ayuda</h4>
                 <ul>
-                    <li><a href="">Sobre nosotros</a></li>
+                    <li><a href="/Mi_web_fitness/login.php">Unete a nosotros</a></li>
                     <li><a href="/Mi_web_fitness/rutinas.php">Nuestras rutinas</a></li>
                     <li><a href="/Mi_web_fitness/index.php">Volver al inicio</a></li>
                     <li><a href=""></a></li>
