@@ -2,6 +2,14 @@
     <div class="container">
         <div class="footer-row">
             <div class="footer-links">
+                <h4>Nuestra Historia</h4>
+                <p>Fit Control nace de la necesidad de ayudar a las personas 
+                    en mejorar su estado físico de una manera sostenible
+                    y efectiva, la cual sea totalmente compatible
+                    con sus estilos de vida.
+                </p>
+            </div>
+            <div class="footer-links">
                 <h4>FitControl</h4>
                 <ul>
                     <li><a href="">Sobre nosotros</a></li>

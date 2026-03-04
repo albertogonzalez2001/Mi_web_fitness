@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(233, 233, 233);
     
 }
 
@@ -17,18 +17,20 @@ body {
 
 .footer{
     background-color: black;
-    padding: 80px 0;
+    padding: 75px 0;
     
 }
 
 .footer-row{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .footer-links{
-    width: 25%;
-    padding: 0 15px;
+    color: white;
+    width: 24%;
+    padding: 0 30px;
 }
 
 .footer-links h4{
@@ -36,8 +38,37 @@ body {
     color: white;
     margin-bottom: 25px;
     font-weight: 400;
-    border-bottom: 2px solid rgb(107, 184, 235);
+    border-bottom: 2px solid rgb(255, 102, 0);
     display: inline-block;
 }
 
-/*Estás en el minuto 16:04 del video del footer*/
+.footer-links ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color:rgb(143, 143, 143);
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover{
+    color: white;
+    padding-left: 6px;
+}
+
+.footer-links p{
+    text-align:left;
+    font-size: 16px;
+}
+
+@media(max-width:991px){
+    .footer-row{
+        text-align: center;
+    }
+
+    .footer-links{
+        width: 100%;
+        margin-bottom: 30px;
+        
+    }
+}
