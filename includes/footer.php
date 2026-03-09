@@ -1,5 +1,6 @@
 <footer class="footer">
-    <div class="container">
+    <div class="container-footer">
+        <p class="sign">Alberto González 2026</p>
         <div class="footer-row">
             <div class="footer-links">
                 <h4>Nuestra Historia</h4>
@@ -33,6 +34,9 @@
                     <li><a href="#">Terminos de Servicio</a></li>
                 </ul>
             </div>
+        </div>
+        <div class="footer-sign">
+            <p>Alberto 2026</p>
         </div>
     </div>
 </footer>

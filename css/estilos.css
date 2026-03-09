@@ -6,18 +6,85 @@
 }
 
 body {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(255, 255, 255);
     
 }
 
-.container{
+/*ESTILOS DEL HEADER*/
+header{
+    background-color:black;
+    padding: 10px;
+    display: flex;
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-navigation{
+    font-weight: 600;
+    padding: 15px;
+}
+
+.header-navigation a{
+    padding-right: 15px;;
+}
+
+.header-navigation > a:hover{
+    color: rgb(255, 102, 0);
+    transition: all 0.3s ease;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo h2{
+    color: rgb(255, 102, 0);
+}
+
+.logo img{
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+@media(max-width:800px){
+    header{
+        flex-direction: column;
+    }
+
+    .header-navigation{
+        padding: 15px;
+       
+    }
+}
+
+/*ESTILOS DEL CONTENIDO DE LAS PÁGINAS*/
+
+
+
+
+
+
+
+/* ESTILOS DEL FOOTER */
+
+.container-footer{
     max-width: 1200px;
     margin: 0 auto;
+    
 }
 
 .footer{
     background-color: black;
     padding: 75px 0;
+    position: relative;
     
 }
 
@@ -37,7 +104,7 @@ body {
     font-size: 20px;
     color: white;
     margin-bottom: 25px;
-    font-weight: 400;
+    font-weight: 600;
     border-bottom: 2px solid rgb(255, 102, 0);
     display: inline-block;
 }
@@ -58,10 +125,20 @@ body {
 
 .footer-links p{
     text-align:left;
+    display:inline-block;
     font-size: 16px;
 }
 
-@media(max-width:991px){
+.footer-sign{
+    text-align: right; 
+    padding: 20px 0; 
+    margin-top: 40px;
+    border-top: 1px solid #7e7d7d; 
+    color: #ffffff; 
+    font-size: 16px; 
+}
+
+@media(max-width:800px){
     .footer-row{
         text-align: center;
     }
@@ -71,4 +148,20 @@ body {
         margin-bottom: 30px;
         
     }
+
+    .footer-sign{
+        text-align: right; 
+        padding: 20px 20px; 
+        margin-top: 40px;
+        border-top: 1px solid #7e7d7d; 
+        color: #ffffff; 
+        font-size: 16px; 
+    }
+
+
+    .footer-links p{
+        max-width: 90%;
+        text-align: center;
+    }
+
 }
