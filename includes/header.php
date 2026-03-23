@@ -19,6 +19,6 @@
             <a href="/Mi_web_fitness/index.php">Página de inicio</a>
             <a href="/Mi_web_fitness/rutinas.php">Rutinas</a>
             <a href="/Mi_web_fitness/contacto.php">Contacto</a>
-            <a href="/Mi_web_fitness/registro.php">Registro</a>
+            <a href="/Mi_web_fitness/login.php">Registro</a>
         </nav>
     </header> 

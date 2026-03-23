@@ -1,5 +1,5 @@
 <?php 
-$title = "Rutinas - FitControl";
+$title = "Rutinas | FitControl";
 include __DIR__ . '/Includes/header.php'; 
 ?>
 
