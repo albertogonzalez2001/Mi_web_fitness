@@ -1,7 +1,8 @@
 <?php
 $title = "Registro | FitControl";
+require __DIR__ . '/functions/usuarios/clase_registro.php';
 include __DIR__ . '/Includes/header.php';
-require __DIR__ - '/usuarios/clase_registro.php';
+
 ?>
 
 <div class="login-registro">
@@ -25,7 +26,7 @@ require __DIR__ - '/usuarios/clase_registro.php';
 
 
 
-<form action="functions/usuarios/crear.php"></form>
+
 
 <?php
 include __DIR__ . '/Includes/footer.php'; 
