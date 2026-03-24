@@ -3,6 +3,12 @@ $title = "Registro | FitControl";
 require __DIR__ . '/functions/usuarios/clase_registro.php';
 include __DIR__ . '/Includes/header.php';
 
+if(isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['password'])){
+    $registro = new Registro($_POST['nombre'], $_POST['email'], $_POST['password']);
+    $resultado = $registro->get_confirmation();
+}
+
+
 ?>
 
 <div class="login-registro">
