@@ -3,7 +3,7 @@ antes de su envío a la base de datos entre otras cosas.-->
 
 <?php
 require __DIR__ . '/funciones_usuarios.php';
-require_once __DIR__ . '/../../Includes/conexion.php';
+require __DIR__ . '/../../Includes/conexion.php';
 
 class Registro{
 
