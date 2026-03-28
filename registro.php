@@ -8,7 +8,6 @@ if(isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['password']
     $resultado = $registro->get_confirmation();
 }
 
-
 ?>
 
 <div class="login-registro">
