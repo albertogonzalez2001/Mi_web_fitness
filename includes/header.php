@@ -27,6 +27,7 @@
             <?php if(isset($_SESSION['email'])): ?>
                 <!--Usuario logueado-->
                 <a href="/Mi_web_fitness/logout.php">Cerrar sesión</a>    
+                <a>Bienvenido <?php echo $_SESSION['email'];?>!</a>
             <?php else: ?>
                 <!--Usuario no logueado-->
             <a href="/Mi_web_fitness/login.php">Registro</a>

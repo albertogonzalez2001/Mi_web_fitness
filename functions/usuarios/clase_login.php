@@ -32,10 +32,10 @@ class Login{
                 header('Location:/Mi_web_fitness/login.php?error=auth');
                 exit;
             }    
-            
+
         } else {
             //Fallo en el email
-            header('Location: /Mi_web_fitness/login.php?error=noexiste');
+            header('Location:/Mi_web_fitness/login.php?error=noexiste');
             exit;
         }
     }
