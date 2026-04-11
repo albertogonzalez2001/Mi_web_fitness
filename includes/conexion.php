@@ -17,7 +17,7 @@ function connectionDB(){
     );
 
     try {
-        $pdo = new PDO("mysql:host=$servidor;dbname=$base_datos;charset=utf8", 
+        $pdo = new PDO("mysql:host=$servidor;port=3309;dbname=$base_datos;charset=utf8", 
         $usuario, 
         $password,
         $db_options);

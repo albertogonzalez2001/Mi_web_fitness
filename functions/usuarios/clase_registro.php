@@ -58,6 +58,7 @@ class Registro{
         
     }
 
+    /*Función para decirle al usuario que se ha registrado con éxito*/
     public function get_confirmation(){
         if($this->result_register){
             return '¡Usuario creado con éxito!';

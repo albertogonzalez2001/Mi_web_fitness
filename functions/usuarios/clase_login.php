@@ -55,6 +55,7 @@ class Login{
         }
     }
     
+    /*Función para recuperar la contraseña encriptada del usuario desde la base de datos. */
     private function get_pass_in_db(){
         $stmt = $this->connectionDB->prepare('SELECT * FROM usuarios WHERE email=:email');
         $stmt->bindParam(':email', $this->email);

@@ -16,8 +16,10 @@ body {
 header{
     background-color:black;
     padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
-    min-height: 70px;
+    min-height: 80px;
     justify-content: space-between;
     align-items: center;
 }
@@ -174,7 +176,7 @@ a {
     font-size: 18px;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1100px){
 
     .section-header{
         text-align: center;
@@ -277,9 +279,11 @@ a {
 
 /*Estilos de la página rutinas.php*/
 
+/*Estilos del filtrado de rutinas*/
+
 .search-container{
     /*border: 2px solid red;*/
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding:  50px 200px;
 }
@@ -289,33 +293,33 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 10px 10px;
     
 }
 
 .interactivos{
-    /*border: 1px solid rgb(223, 223, 223);*/
     border: 2px solid rgb(223, 223, 223);
     border-radius: 0;
     
 }
 
-.interactivos #grupo-muscular, #dificultad{
-    margin:0;
-    padding: 2px 30px;
+#rutine-search{
     
-}
-
-.interactivos #rutine-search{
-    padding: 5px 50px;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 150px;
     border: none;
 }
 
-input::placeholder{
-    text-align: center;
+#grupo-muscular, #dificultad{
+    padding: 2px;
+    padding-left: 12px;
+    padding-right: 120px; 
+    margin: 0;
+
 }
 
-.interactivos #submit{
+#submit{
     padding: 5px 5px;
     background-color: rgb(255, 102, 0);
     color: white;
@@ -329,10 +333,78 @@ input::placeholder{
     color: rgb(255, 102, 0);
 }
 
+@media(max-width: 1250px){
+    
+    .row{
+        flex-direction: column;
+        gap: 5px;
+    
+    }
 
+    #rutine-search, #grupo-muscular, #dificultad, #submit{
+        width: 300px;
+        padding-left: 30px;
+        padding-right: 30px;;
+    }
+    
 
+}
 
-  
+/*Estilos del contenido de rutinas.php*/
+.contenido-rutinas{
+    background-color: white;
+}
+.contenedor-main-rutinas{
+    /*border: 2px solid red;*/
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contenedor-main-rutinas h2{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+}
+
+.rutinas{
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+}
+
+.rutinas p{
+    font-weight:300;
+}
+
+.row1-rutina {
+    /*border: 2px solid red;*/
+    margin: 0 40px;
+    
+    
+}
+
+.row1-rutina img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+}
+
+.row2-rutina {
+    /*border: 2px solid red;*/
+    margin: 0 10px;
+   
+}
+
+.row2-rutina h3{
+    font-size: 25px;
+
+}
 
 
 /* ESTILOS DEL FOOTER */
