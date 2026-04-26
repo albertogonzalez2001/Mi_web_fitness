@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="footer-sign">
-            <p>Alberto 2026</p>
+            <p>Alberto González 2026 ©</p>
         </div>
     </div>
 </footer>
