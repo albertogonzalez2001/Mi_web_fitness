@@ -92,6 +92,7 @@ try {
         <hr><br>
         
         <?php 
+        //Se recorre el array $rutinas 
         if (!empty($rutinas)) {
             foreach ($rutinas as $rutina) {
                 // Generar ID único basado en el ID de la BD
@@ -119,6 +120,36 @@ try {
                     default:
                         $imagen = '/Mi_web_fitness/uploads/images/rutina-pecho.jpg';
                 }
+
+                // Contenido dinámico opcional que puede venir de la base de datos
+                $descripcion = trim($rutina['descripcion'] ?? '');
+                $duracion = $rutina['duracion'] ?? null;
+                $objetivo = $rutina['objetivo'] ?? null;
+                $tipo_rutina = $rutina['tipo_rutina'] ?? null;
+                $ejercicios = $rutina['ejercicios'] ?? null;
+                
+                // En el caso de que no haya contenido en la base de datos, se muestra este contenido
+                if ($descripcion === '') {
+                    switch ($grupo) {
+                        case 'pecho':
+                            $descripcion = 'Rutina pensada para fortalecer y definir el pecho con ejercicios clave.';
+                            break;
+                        case 'pierna':
+                            $descripcion = 'Rutina diseñada para trabajar piernas completas y mejorar fuerza y resistencia.';
+                            break;
+                        case 'brazo':
+                            $descripcion = 'Rutina enfocada en bíceps y tríceps para tonificar los brazos.';
+                            break;
+                        case 'hombros':
+                            $descripcion = 'Rutina para hombros con movimientos que mejoran estabilidad y forma.';
+                            break;
+                        case 'full-body':
+                            $descripcion = 'Rutina completa que trabaja todo el cuerpo en una sola sesión.';
+                            break;
+                        default:
+                            $descripcion = 'Descripción detallada de la rutina disponible.';
+                    }
+                }
         ?>
         <div class="rutinas" id="<?php echo $rutina_id; ?>">
             <div class="row1-rutina">
@@ -126,16 +157,28 @@ try {
             </div>
             <div class="row2-rutina">
                 <h3><?php echo $rutina['titulo']; ?></h3>
-                <p><strong>Dificultad:</strong> <?php echo ucfirst($rutina['dificultad']); ?></p>
+                <?php if ($tipo_rutina): ?>
+                    <p><strong>Tipo de rutina:</strong> <?php echo $tipo_rutina; ?></p>
+                <?php endif; ?>
+                <p><strong>Dificultad:</strong> <?php echo $rutina['dificultad']; ?></p>
                 <p><strong>Grupo Muscular:</strong> <?php echo $rutina['grupo_muscular']; ?></p>
-                <p>Descripción detallada de la rutina disponible.</p>
+                <?php if ($duracion): ?>
+                    <p><strong>Duración:</strong> <?php echo $duracion; ?></p>
+                <?php endif; ?>
+                <?php if ($objetivo): ?>
+                    <p><strong>Objetivo:</strong> <?php echo $objetivo; ?></p>
+                <?php endif; ?>
+                <p><?php echo $descripcion; ?></p>
+                <?php if ($ejercicios): ?>
+                    <p><strong>Ejercicios:</strong> <?php echo $ejercicios; ?></p>
+                <?php endif; ?>
             </div>
         </div>
         <br><hr><br>
         <?php 
             }
         } else {
-            echo '<p style="text-align: center; font-size: 18px; color: #666;">No se encontraron rutinas que coincidan con los filtros aplicados.</p>';
+            echo '<p style="text-align: center; font-size: 18px; color: #666;">No se encontraron rutinas que coincidan con los filtros aplicados.</p><br>';
         }
         ?>
         
