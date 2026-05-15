@@ -1,24 +1,28 @@
 <?php
-$title = 'Progreso | FitControl';
+$title = 'Mi progreso | FitControl';
 require_once __DIR__ . '/Includes/conexion.php';
 require_once __DIR__ . '/functions/progreso/obtener.php';
 require_once __DIR__ . '/functions/progreso/crear.php';
 require_once __DIR__ . '/functions/progreso/editar.php';
 require_once __DIR__ . '/functions/progreso/eliminar.php';
 
+//Inicia la sesión unicamente si no estaba iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+//El email se guarda en $_SESSION['email] y redirige a login.php si no hay sesion
 if (empty($_SESSION['email'])) {
     header('Location:/Mi_web_fitness/login.php');
     exit;
 }
 
+//Conexión a la base de datos
 $pdo = connectionDB();
 $userEmail = $_SESSION['email'];
 $userId = getUserIdByEmail($pdo, $userEmail);
 
+//Si no se encuentra el id del usuario se redirige a login.php
 if (!$userId) {
     header('Location:/Mi_web_fitness/login.php');
     exit;
@@ -27,9 +31,11 @@ if (!$userId) {
 $error = null;
 $success = null;
 
+//Si el metodo por el que se envían los datos del formulario es POST, accedemos a la opción del CRUD.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
+    //Función para crear un nuevo progreso CREATE
     if ($action === 'create') {
         $rutinaId = filter_input(INPUT_POST, 'id_rutina', FILTER_VALIDATE_INT);
         $comentarios = trim($_POST['comentarios'] ?? '');
@@ -37,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$rutinaId || $comentarios === '') {
             $error = 'Selecciona una rutina e introduce tus comentarios de progreso.';
         } else {
+            //Llamas a la función creada en crear.php
             $created = createProgress($pdo, $userId, $rutinaId, $comentarios);
             if ($created) {
                 header('Location:/Mi_web_fitness/progreso.php?success=created');
@@ -46,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    //Función para actualizar el progreso UPDATE
     if ($action === 'update') {
         $progressId = filter_input(INPUT_POST, 'progress_id', FILTER_VALIDATE_INT);
         $rutinaId = filter_input(INPUT_POST, 'id_rutina', FILTER_VALIDATE_INT);
@@ -54,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$progressId || !$rutinaId || $comentarios === '') {
             $error = 'Debes completar la edición con rutina y comentarios válidos.';
         } else {
+            //Llamas a la función creada en editar.php
             $updated = updateProgress($pdo, $progressId, $userId, $rutinaId, $comentarios);
             if ($updated) {
                 header('Location:/Mi_web_fitness/progreso.php?success=updated');
@@ -63,11 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    //Función para eliminar el progreso DELETE
     if ($action === 'delete') {
         $progressId = filter_input(INPUT_POST, 'progress_id', FILTER_VALIDATE_INT);
         if (!$progressId) {
             $error = 'No se pudo eliminar el registro. Datos invalidos.';
         } else {
+            //Llamas a la función creada en eliminar.php
             $deleted = deleteProgress($pdo, $progressId, $userId);
             if ($deleted) {
                 header('Location:/Mi_web_fitness/progreso.php?success=deleted');
@@ -78,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+//Expide mensajes de "exito" cuando se realizan todas las acciones CUD
 if (isset($_GET['success'])) {
     switch ($_GET['success']) {
         case 'created':
@@ -92,6 +104,7 @@ if (isset($_GET['success'])) {
     }
 }
 
+//Edita y muestra los datos del progreso de cada rutina y en un UPDATE se validan y se guardan en la BD
 $editId = filter_input(INPUT_GET, 'edit_id', FILTER_VALIDATE_INT);
 $editing = null;
 if ($editId) {
@@ -108,10 +121,11 @@ function escape(string $value): string {
 include __DIR__ . '/Includes/header.php';
 ?>
 
+<!-- Comineza la sección del html -->
 <section class="progreso-page">
     <div class="page-header">
         <h1>Mi progreso</h1>
-        <p>Registra y compara tu progreso con las rutinas disponibles. Escribe aquí cómo te ha ido y guarda tus notas en la base de datos.</p>
+        <p>Registra y compara tu progreso con las rutinas disponibles.</p>
     </div>
 
     <?php if ($success): ?>
@@ -121,6 +135,7 @@ include __DIR__ . '/Includes/header.php';
         <div class="alert alert-error"><?php echo escape($error); ?></div>
     <?php endif; ?>
 
+    <!-- Formulario de edición o de registro de progreso -->
     <div class="progress-form-card">
         <h2><?php echo $editing ? 'Editar progreso' : 'Registrar nuevo progreso'; ?></h2>
         <form method="post" action="/Mi_web_fitness/progreso.php">
@@ -156,6 +171,7 @@ include __DIR__ . '/Includes/header.php';
         </form>
     </div>
 
+    <!-- Tarjetas emergentes cuando ya se ha añadido un progreso -->
     <?php if (!empty($progresos)): ?>
         <div class="progress-grid">
             <?php foreach ($progresos as $progreso): ?>
