@@ -162,6 +162,7 @@ a {
 
 .article:hover {
     box-shadow: 0px 0px 10px 5px grey;
+    border: none;
 }
 
 .article-image img{

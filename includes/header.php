@@ -24,7 +24,6 @@
         <nav class="header-navigation">
             <a href="/Mi_web_fitness/index.php" class="nav-link">Página de inicio</a>
             <a href="/Mi_web_fitness/rutinas.php" class="nav-link">Rutinas</a>
-            <a href="/Mi_web_fitness/contacto.php" class="nav-link">Contacto</a>
             <?php if(isset($_SESSION['email'])): ?>
                 <!--Usuario logueado--> 
                 <a href="/Mi_web_fitness/progreso.php" class="nav-link">Mi progreso</a>

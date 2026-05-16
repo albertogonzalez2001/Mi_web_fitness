@@ -111,6 +111,7 @@ if ($editId) {
     $editing = getProgressById($pdo, $editId, $userId);
 }
 
+//Estas dos variables son funciones que vienen de obtener.php
 $rutinas = getRutinas($pdo);
 $progresos = getProgressForUser($pdo, $userId);
 
@@ -121,7 +122,7 @@ function escape(string $value): string {
 include __DIR__ . '/Includes/header.php';
 ?>
 
-<!-- Comineza la sección del html -->
+<!-- Comineza la sección del html, parte interactiva del cliente -->
 <section class="progreso-page">
     <div class="page-header">
         <h1>Mi progreso</h1>

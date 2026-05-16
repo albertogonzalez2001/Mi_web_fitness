@@ -1,5 +1,6 @@
 <?php
-
+//Campos de la tabla progreso + importar conexión con la base de datos
+//Comprueba de manera exahustiva que los IDs coincidan
 function updateProgress(PDO $pdo, int $progressId, int $userId, int $rutinaId, string $comentarios): bool {
     $stmt = $pdo->prepare(
         'UPDATE progreso

@@ -1,5 +1,5 @@
 <?php
-
+//Atributos de la tabla progreso + importar conexión con la base de datos
 function createProgress(PDO $pdo, int $userId, int $rutinaId, string $comentarios): bool {
     $stmt = $pdo->prepare(
         'INSERT INTO progreso (id_usuario, id_rutina, comentarios)

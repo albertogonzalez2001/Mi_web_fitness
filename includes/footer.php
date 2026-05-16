@@ -21,7 +21,7 @@
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
-                    <li><a href="/Mi_web_fitness/registro.php">Unete a nosotros</a></li>
+                    <li><a href="/Mi_web_fitness/progreso.php">Registra tu progreso</a></li>
                     <li><a href="/Mi_web_fitness/rutinas.php">Nuestras rutinas</a></li>
                     <li><a href="/Mi_web_fitness/login.php">¿Ya tienes una cuenta?</a></li>
                 </ul>
